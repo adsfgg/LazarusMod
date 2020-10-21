@@ -1,0 +1,4 @@
+Alien.Cyst
+Increased maturity time to 90 seconds from 20 seconds
+Removed infestation multiplier, infestation will now grow at the normal rate
+Gorges can grow cysts regardless of their build state

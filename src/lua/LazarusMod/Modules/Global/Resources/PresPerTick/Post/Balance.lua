@@ -1,0 +1,1 @@
+kPlayerResPerInterval = 0.1

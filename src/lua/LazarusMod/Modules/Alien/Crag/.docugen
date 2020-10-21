@@ -1,0 +1,10 @@
+Alien.Structures.Crag
+Increased heal percentage to 6% from 4.2%
+Increased minimum heal amount to 10 from 7
+Increased maximum heal amount to 60 from 42
+Crags now heal a percentage of your base HP instead of your max HP
+HP
+>Health increased to 600 from 480
+>Armor increased to 200 from 160
+>Mature health increased to 700 from 560
+>Mature armor increased to 340 from 272

@@ -1,0 +1,1 @@
+kShotgunDamage = 10

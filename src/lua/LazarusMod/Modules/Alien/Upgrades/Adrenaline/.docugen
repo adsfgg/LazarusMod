@@ -1,0 +1,4 @@
+Alien.Upgrades.Adrenaline
+Lowered max energy pool from 160 to 130
+Removed per-lifeform energy recuperation rates
+>All lifeforms will use a flat recuperation rate of 13 energy per second.

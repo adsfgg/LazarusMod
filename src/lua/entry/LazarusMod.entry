@@ -1,0 +1,13 @@
+--[[
+    You can set the priority of your mod here.
+    Other than that do not modify this file
+]]
+
+modEntry = {
+    Client      = "lua/LazarusMod/ModFramework/Entry/Client.lua",
+    Server      = "lua/LazarusMod/ModFramework/Entry/Server.lua",
+    Predict     = "lua/LazarusMod/ModFramework/Entry/Predict.lua",
+    Shared      = "lua/LazarusMod/ModFramework/Entry/Shared.lua",
+    FileHooks   = "lua/LazarusMod/ModFramework/Entry/FileHooks.lua",
+    Priority    = 50
+}

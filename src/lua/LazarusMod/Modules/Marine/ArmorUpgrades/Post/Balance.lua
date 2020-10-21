@@ -1,0 +1,1 @@
+kArmor1ResearchTime = 60

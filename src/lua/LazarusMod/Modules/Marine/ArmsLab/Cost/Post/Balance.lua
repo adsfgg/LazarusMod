@@ -1,0 +1,1 @@
+kArmsLabCost = 15
