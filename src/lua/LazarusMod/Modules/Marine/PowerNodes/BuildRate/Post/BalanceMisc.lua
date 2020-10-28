@@ -1,0 +1,1 @@
+kBuilderPowerRepairRate = 110

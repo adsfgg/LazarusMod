@@ -1,0 +1,4 @@
+Alien.Lerk.Movement
+Swoop gravity multiplier lowered to 4x from 6x
+Lerks will bleed speed faster initially when gliding
+Flap force scales with celerity

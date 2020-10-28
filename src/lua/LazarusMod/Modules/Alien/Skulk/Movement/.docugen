@@ -1,0 +1,6 @@
+Alien.Skulk.Movement
+Max speed lowered to 7.0 from 7.25
+Wall walking increases max speed by 0.25
+Sneak modifier lowered to 0.5 from 0.5931035
+Wall jump force lowered to 5.2 from 6.4
+Wall jump force now scales with Celerity (0.1 per Spur)

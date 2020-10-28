@@ -1,0 +1,5 @@
+Marine.Medpack
+Initial heal increased to 50 HP from 25 HP
+Pickup delay increased to 0.53 from 0.45
+Removed medpack HoT
+Changed auto-snap radius to match AmmoPack

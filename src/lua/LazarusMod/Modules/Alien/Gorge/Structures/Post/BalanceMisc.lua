@@ -1,0 +1,1 @@
+kDropStructureEnergyCost = 20

@@ -1,0 +1,1 @@
+kSpitDamageType = kDamageType.Light -- normal

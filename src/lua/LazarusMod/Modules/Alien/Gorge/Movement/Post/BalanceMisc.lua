@@ -1,0 +1,1 @@
+kBellySlideCost = 25

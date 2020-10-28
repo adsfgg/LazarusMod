@@ -1,0 +1,1 @@
+Clog.GetIsFlameableMultiplier = nil
