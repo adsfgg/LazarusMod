@@ -1,7 +1,7 @@
 if Client then
     function Web:OnUpdateRender()
         if self.webRenderModel then
-            if self.variant == kGorgeVariant.toxin then
+            if self.variant == kGorgeVariants.toxin then
                 self._renderModel:SetMaterialParameter("textureIndex", 1 )
             else
                 self._renderModel:SetMaterialParameter("textureIndex", 0 )

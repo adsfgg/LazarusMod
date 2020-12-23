@@ -1,4 +1,4 @@
-# Changes between [LazarusMod revision 1](revisions/revision1.md) and Vanilla Build 335
+# Changes between [LazarusMod revision 2](revisions/revision2.md) and Vanilla Build 336
 <br/>
 
 # Alien
@@ -8,10 +8,10 @@
 * Removed flameable multiplier
 
 ## Cyst
+* Removed Hive type bonuses
 * Increased maturity time to 90 seconds from 20 seconds
 * Removed infestation multiplier, infestation will now grow at the normal rate
 * Gorges can grow cysts regardless of their build state
-* Removed Hive type bonuses
 * ### Health
   * Starting health increased to 70 from 50
   * Armor reduced to 0 from 1
@@ -48,10 +48,11 @@
 * Added additional gestation time when re-evolving upgrades
 
 ## Gorge
+* Increased Gorge armor to 75 from 50
 * ### Babblers
-  * Babbler will always take at least 20 damage when attacked
-  * Babbler auto spawn disabled
   * Reduce health to 10 from 12
+  * Babbler auto spawn disabled
+  * Babbler will always take at least 20 damage when attacked
   * Babblers need to be created from eggs
 * ### HealSpray
   * HealSpray no longer adds maturity
@@ -59,10 +60,10 @@
 * ### Hydra
   * Spread is now static at 8 radians
   * ROF is random between 0.5 and 1.5 seconds
-  * Increase build time to 13 seconds from 8 seconds
   * Increase Hydra cost to 2 pres from 0
   * Increase health to 350, gains 100 hp from maturity
   * No longer scales with Biomass
+  * Increase build time to 13 seconds from 8 seconds
 * ### Movement
   * Increased air control to 30 from 9
   * Lowered max backward speed scalar to 0.5 from 0.7
@@ -82,13 +83,13 @@
 * ### Tunnels
   * Gorge Tunnels are now built from the Gorge
 * ### Web
-  * Lower webbed duration to 2 seconds from 5 seconds
-  * Health increased to 50 from 10
   * Remove web charges
+  * Decreased web slowdown to 15% from 34%
+  * Health increased to 50 from 10
+  * Webs now require webs to be researched by the commander - Biomass 5
   * Increase number of webs per Gorge to 10 from 3
   * Webs no longer cloak
-  * Webs now require webs to be researched by the commander - Biomass 5
-  * Decreased web slowdown to 15% from 34%
+  * Lower webbed duration to 2 seconds from 5 seconds
 
 ## Hitboxes
 * Hitboxes for Skulk, Lerk and Fade now match the model

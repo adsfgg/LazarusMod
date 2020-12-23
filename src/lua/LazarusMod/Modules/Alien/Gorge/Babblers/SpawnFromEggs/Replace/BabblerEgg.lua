@@ -38,13 +38,17 @@ BabblerEgg.kDropRange = 3
 
 BabblerEgg.kModelName = PrecacheAsset("models/alien/babbler/babbler_egg.model")
 BabblerEgg.kModelNameShadow = PrecacheAsset("models/alien/babbler/babbler_egg_shadow.model")
-BabblerEgg.kModelNameAbyss = PrecacheAsset("models/alien/babbler/babbler_egg_abyss.model")
 local kBabblerEggModelVariants =
 {
-    [kGorgeVariant.normal] = BabblerEgg.kModelName,
-    [kGorgeVariant.shadow] = BabblerEgg.kModelNameShadow,
-    [kGorgeVariant.abyss] = BabblerEgg.kModelNameAbyss,
+    [kGorgeVariants.normal] = BabblerEgg.kModelName,
+    [kGorgeVariants.shadow] = BabblerEgg.kModelNameShadow,
+    [kGorgeVariants.abyss] = BabblerEgg.kModelName,
+    [kGorgeVariants.reaper] = BabblerEgg.kModelName,
+    [kGorgeVariants.nocturne] = BabblerEgg.kModelName,
+    [kGorgeVariants.kodiak] = BabblerEgg.kModelName,
+    [kGorgeVariants.toxin] = BabblerEgg.kModelName,
 }
+local kBabblerEggWorldMaterialIndex = 0
 
 local kAnimationGraph = PrecacheAsset("models/alien/babbler/babbler_egg.animation_graph")
 local kHatchSound = PrecacheAsset("sound/NS2.fev/alien/babbler/hatch")
@@ -55,7 +59,7 @@ local networkVars =
 {
     ownerId = "entityid",
     hasHatched = "boolean",
-    variant = "enum kGorgeVariant"
+    variant = "enum kGorgeVariants"
 }
 
 AddMixinNetworkVars(BaseModelMixin, networkVars)
@@ -96,7 +100,7 @@ function BabblerEgg:OnCreate()
     InitMixin(self, DetectableMixin)
     -- InitMixin(self, CloakableMixin)
 
-    self.variant = kGorgeVariant.normal
+    self.variant = kGorgeVariants.normal
     
     if Server then
         self.silenced = false
@@ -193,7 +197,7 @@ if Server then
 
         -- Disables auto collsion.
         self:SetModel(nil)
-        self:TriggerEffects(self.variant == kGorgeVariant.toxin and "babbler_hatch_toxin" or "babbler_hatch")
+        self:TriggerEffects(self.variant == kGorgeVariants.toxin and "babbler_hatch_toxin" or "babbler_hatch")
 
         local owner = self:GetOwner()
         local babblers = {}
@@ -374,14 +378,6 @@ end
 
 function BabblerEgg:OnUpdateRender()
 
-    if self._renderModel then
-        if self.variant == kGorgeVariant.toxin then
-            self._renderModel:SetMaterialParameter("textureIndex", 1 )
-        else
-            self._renderModel:SetMaterialParameter("textureIndex", 0 ) 
-        end
-    end
-
     -- local showDecal = self:GetIsVisible() and not self:GetIsCloaked()
     local showDecal = self:GetIsVisible() and not self.hasHatched
 
@@ -390,6 +386,27 @@ function BabblerEgg:OnUpdateRender()
     elseif self.decal and not showDecal then
         Client.DestroyRenderDecal(self.decal)
         self.decal = nil
+    end
+
+    if self.dirtySkinState and not self.delayedSkinUpdate then
+        
+        local model = self:GetRenderModel()
+        if model then
+            if self.variant ~= kGorgeVariants.normal and self.variant ~= kGorgeVariants.shadow then
+                local material = GetPrecachedCosmeticMaterial( self:GetClassName(), self.variant )
+                if material then
+                    model:SetOverrideMaterial( kBabblerEggWorldMaterialIndex, material )
+                end
+            else
+                model:ClearOverrideMaterials()
+            end
+
+            self:SetHighlightNeedsUpdate()
+        else
+            return false --run again next frame
+        end
+
+        self.dirtySkinState = false
     end
 
 end

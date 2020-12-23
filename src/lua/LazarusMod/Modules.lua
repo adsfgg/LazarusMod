@@ -32,6 +32,7 @@ function GetModFrameworkModulesLazarusMod()
       "Alien/Gorge/Babblers/Health",
       "Alien/Gorge/Babblers/SpawnFromEggs",
       "Alien/Gorge/HealSpray",
+      "Alien/Gorge/Health",
       "Alien/Gorge/Hydra/Attack",
       "Alien/Gorge/Hydra/BuildTime",
       "Alien/Gorge/Hydra/Cost",

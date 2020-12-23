@@ -1,0 +1,1 @@
+kGorgeArmor = 75 -- 50
